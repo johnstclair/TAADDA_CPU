@@ -31,11 +31,17 @@ NOT COND:
 6 = MULT
 
 COND:
+0 = EQUALS
+1 = NOT EQUALS
+2 = LESS THAN
+3 = LESS THAN EQUALS
+4 = GREATER THAN
+5 = GREATER THAN EQUALS
 
-
+BIT5 makes the original 7 instructions COND instructions, if COND is true, jump to program memory at value in jump_addrs register
 BIT6 makes ARG2 immediate (ARG2 will provide a number value, not an address)
 BIT7 makes ARG1 immediate
 
 ```
 
-The CPU has 6 registers
+The CPU has 6 registers, an input and output
