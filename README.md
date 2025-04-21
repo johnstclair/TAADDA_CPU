@@ -12,7 +12,7 @@ TAADDA is a CPU architecture that I've been working on using the in game sandbox
 
 Turing Complete is able to export to Verilog, it is very unoptimized, but still pretty cool!  
 
-This is an image of the CPU
+This is an image of the CPU (rotated 90deg)
 ![An image of the CPU](./taadda.svg)
 
 The architecture is 32bit, and each byte of data is handled seperatly.  
