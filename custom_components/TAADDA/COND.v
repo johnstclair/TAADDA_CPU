@@ -1,0 +1,60 @@
+module COND (clk, rst, \4 , \2 , \1 , ARG1, _ARG2, Output);
+  parameter UUID = 0;
+  parameter NAME = "";
+  input wire clk;
+  input wire rst;
+
+  input  wire [0:0] \4 ;
+  input  wire [0:0] \2 ;
+  input  wire [0:0] \1 ;
+  input  wire [7:0] ARG1;
+  input  wire [7:0] _ARG2;
+  output  wire [0:0] Output;
+
+  TC_Decoder3 # (.UUID(64'd1010268244370780879 ^ UUID)) Decoder3_0 (.dis(1'd0), .sel0(wire_13), .sel1(wire_4), .sel2(wire_17), .out0(wire_14), .out1(wire_12), .out2(wire_11), .out3(wire_0), .out4(wire_6), .out5(wire_2), .out6(), .out7());
+  TC_Switch # (.UUID(64'd216094114893723354 ^ UUID), .BIT_WIDTH(64'd1)) Switch1_1 (.en(wire_14), .in(wire_9), .out(wire_1_5));
+  TC_Switch # (.UUID(64'd3029236172586697014 ^ UUID), .BIT_WIDTH(64'd1)) Switch1_2 (.en(wire_12), .in(wire_15), .out(wire_1_4));
+  TC_Switch # (.UUID(64'd1729439901788597568 ^ UUID), .BIT_WIDTH(64'd1)) Switch1_3 (.en(wire_11), .in(wire_7), .out(wire_1_3));
+  TC_Switch # (.UUID(64'd561659838894937931 ^ UUID), .BIT_WIDTH(64'd1)) Switch1_4 (.en(wire_0), .in(wire_8), .out(wire_1_2));
+  TC_Switch # (.UUID(64'd1635622189222337026 ^ UUID), .BIT_WIDTH(64'd1)) Switch1_5 (.en(wire_6), .in(wire_10), .out(wire_1_0));
+  TC_Switch # (.UUID(64'd785846219722151181 ^ UUID), .BIT_WIDTH(64'd1)) Switch1_6 (.en(wire_2), .in(wire_16), .out(wire_1_1));
+  TC_Equal # (.UUID(64'd1752936716339379673 ^ UUID), .BIT_WIDTH(64'd8)) Equal8_7 (.in0(wire_3), .in1(wire_5), .out(wire_9));
+  TC_Not # (.UUID(64'd1452321611546106817 ^ UUID), .BIT_WIDTH(64'd1)) Not_8 (.in(wire_9), .out(wire_15));
+  TC_Or # (.UUID(64'd3192793064820821855 ^ UUID), .BIT_WIDTH(64'd1)) Or_9 (.in0(wire_9), .in1(wire_7), .out(wire_8));
+  TC_Nor # (.UUID(64'd1408638217097162503 ^ UUID), .BIT_WIDTH(64'd1)) Nor_10 (.in0(wire_7), .in1(wire_9), .out(wire_10));
+  TC_Not # (.UUID(64'd2050731421347550851 ^ UUID), .BIT_WIDTH(64'd1)) Not_11 (.in(wire_7), .out(wire_16));
+  TC_LessU # (.UUID(64'd3949279658054764040 ^ UUID), .BIT_WIDTH(64'd8)) LessU8_12 (.in0(wire_3), .in1(wire_5), .out(wire_7));
+
+  wire [0:0] wire_0;
+  wire [0:0] wire_1;
+  wire [0:0] wire_1_0;
+  wire [0:0] wire_1_1;
+  wire [0:0] wire_1_2;
+  wire [0:0] wire_1_3;
+  wire [0:0] wire_1_4;
+  wire [0:0] wire_1_5;
+  assign wire_1 = wire_1_0|wire_1_1|wire_1_2|wire_1_3|wire_1_4|wire_1_5;
+  assign Output = wire_1;
+  wire [0:0] wire_2;
+  wire [7:0] wire_3;
+  assign wire_3 = ARG1;
+  wire [0:0] wire_4;
+  assign wire_4 = \2 ;
+  wire [7:0] wire_5;
+  assign wire_5 = _ARG2;
+  wire [0:0] wire_6;
+  wire [0:0] wire_7;
+  wire [0:0] wire_8;
+  wire [0:0] wire_9;
+  wire [0:0] wire_10;
+  wire [0:0] wire_11;
+  wire [0:0] wire_12;
+  wire [0:0] wire_13;
+  assign wire_13 = \1 ;
+  wire [0:0] wire_14;
+  wire [0:0] wire_15;
+  wire [0:0] wire_16;
+  wire [0:0] wire_17;
+  assign wire_17 = \4 ;
+
+endmodule

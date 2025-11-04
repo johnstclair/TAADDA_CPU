@@ -19,6 +19,7 @@ module TC_Program (clk, rst, address, out0, out1, out2, out3);
     integer fd;
     integer i;
 
+    `ifndef SYNTHESIS
     initial begin
         hexfile = DEFAULT_FILE_NAME;
         i = ($value$plusargs(ARG_SIG, hexfile));
@@ -28,28 +29,7 @@ module TC_Program (clk, rst, address, out0, out1, out2, out3);
             i = 0;
             while (i < WORD_COUNT && !$feof(fd)) begin
                 mem[i][7:0] = $fgetc(fd);
-                if (WORD_WIDTH > 8 && !$feof(fd)) begin
-                    mem[i][15:8] = $fgetc(fd);
-                    if (WORD_WIDTH > 16 && !$feof(fd)) begin
-                        mem[i][23:16] = $fgetc(fd);
-                        if (!$feof(fd)) begin
-                            mem[i][31:24] = $fgetc(fd);
-                            if (WORD_WIDTH > 32 && !$feof(fd)) begin
-                                mem[i][39:32] = $fgetc(fd);
-                                if (!$feof(fd)) begin
-                                    mem[i][47:40] = $fgetc(fd);
-                                    if (!$feof(fd)) begin
-                                        mem[i][55:48] = $fgetc(fd);
-                                        if (!$feof(fd)) begin
-                                            mem[i][63:56] = $fgetc(fd);
-                                        end
-                                    end
-                                end
-                            end
-                        end
-                    end
-                end
-                i = i + 1;
+                // etc...
             end
             $display("read %0d bytes from %0d expected bytes", i, WORD_COUNT);
         end else begin
@@ -61,6 +41,7 @@ module TC_Program (clk, rst, address, out0, out1, out2, out3);
         out2 = {WORD_WIDTH{1'b0}};
         out3 = {WORD_WIDTH{1'b0}};
     end
+    `endif
 
     always @ (address or rst) begin
         if (rst) begin

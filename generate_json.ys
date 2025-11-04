@@ -1,0 +1,9 @@
+read_verilog -sv builtin_components/*.v 
+read_verilog -sv custom_components/TAADDA/*.v 
+read_verilog TAADDA.v 
+
+hierarchy -check -auto-top 
+proc 
+opt 
+
+write_json taadda.json

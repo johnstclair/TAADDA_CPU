@@ -1,0 +1,32 @@
+module REG (clk, rst, Load, Input, Save_value, Save, Always_output, Output_1, Output_2);
+  parameter UUID = 0;
+  parameter NAME = "";
+  input wire clk;
+  input wire rst;
+
+  input  wire [0:0] Load;
+  input  wire [0:0] Input;
+  input  wire [7:0] Save_value;
+  input  wire [0:0] Save;
+  output  wire [7:0] Always_output;
+  output  wire [7:0] Output_1;
+  output  wire [7:0] Output_2;
+
+  TC_Register # (.UUID(64'd1 ^ UUID), .BIT_WIDTH(64'd8)) Register8_0 (.clk(clk), .rst(rst), .load(wire_4), .save(wire_5), .in(wire_2), .out(wire_3));
+  TC_Constant # (.UUID(64'd2 ^ UUID), .BIT_WIDTH(64'd1), .value(1'd1)) On_1 (.out(wire_4));
+  TC_Switch # (.UUID(64'd3587491547824661070 ^ UUID), .BIT_WIDTH(64'd8)) Output8z_2 (.en(wire_1), .in(wire_3), .out(Output_1));
+  TC_Switch # (.UUID(64'd4473759167700893639 ^ UUID), .BIT_WIDTH(64'd8)) Output8z_3 (.en(wire_0), .in(wire_3), .out(Output_2));
+
+  wire [0:0] wire_0;
+  assign wire_0 = Input;
+  wire [0:0] wire_1;
+  assign wire_1 = Load;
+  wire [7:0] wire_2;
+  assign wire_2 = Save_value;
+  wire [7:0] wire_3;
+  assign Always_output = wire_3;
+  wire [0:0] wire_4;
+  wire [0:0] wire_5;
+  assign wire_5 = Save;
+
+endmodule

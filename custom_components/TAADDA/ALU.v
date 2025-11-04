@@ -1,0 +1,60 @@
+module ALU (clk, rst, Instruction, Input_1, Input_2, Output);
+  parameter UUID = 0;
+  parameter NAME = "";
+  input wire clk;
+  input wire rst;
+
+  input  wire [7:0] Instruction;
+  input  wire [7:0] Input_1;
+  input  wire [7:0] Input_2;
+  output  wire [7:0] Output;
+
+  TC_Splitter8 # (.UUID(64'd3381650550446180165 ^ UUID)) Splitter8_0 (.in(wire_19), .out0(wire_12), .out1(wire_14), .out2(wire_15), .out3(), .out4(), .out5(), .out6(), .out7());
+  TC_Decoder3 # (.UUID(64'd668190425970608353 ^ UUID)) Decoder3_1 (.dis(1'd0), .sel0(wire_12), .sel1(wire_14), .sel2(wire_15), .out0(wire_17), .out1(wire_8), .out2(wire_9), .out3(wire_7), .out4(wire_5), .out5(wire_6), .out6(), .out7());
+  TC_Switch # (.UUID(64'd237581134299521793 ^ UUID), .BIT_WIDTH(64'd8)) Switch8_2 (.en(wire_17), .in(wire_13), .out(wire_1_0));
+  TC_Switch # (.UUID(64'd4247881772841862541 ^ UUID), .BIT_WIDTH(64'd8)) Switch8_3 (.en(wire_8), .in(wire_0), .out(wire_1_1));
+  TC_Switch # (.UUID(64'd199064384746026130 ^ UUID), .BIT_WIDTH(64'd8)) Switch8_4 (.en(wire_9), .in(wire_4), .out(wire_1_2));
+  TC_Switch # (.UUID(64'd359178064422870770 ^ UUID), .BIT_WIDTH(64'd8)) Switch8_5 (.en(wire_7), .in(wire_18), .out(wire_1_3));
+  TC_Switch # (.UUID(64'd3620673480099842685 ^ UUID), .BIT_WIDTH(64'd8)) Switch8_6 (.en(wire_5), .in(wire_16), .out(wire_1_4));
+  TC_Switch # (.UUID(64'd2719275142365437157 ^ UUID), .BIT_WIDTH(64'd8)) Switch8_7 (.en(wire_6), .in(wire_11), .out(wire_1_5));
+  TC_Add # (.UUID(64'd647422302656267644 ^ UUID), .BIT_WIDTH(64'd8)) Add8_8 (.in0(wire_2), .in1(wire_3), .ci(1'd0), .out(wire_13), .co());
+  TC_Add # (.UUID(64'd2431124877280008496 ^ UUID), .BIT_WIDTH(64'd8)) Add8_9 (.in0(wire_2), .in1(wire_10), .ci(1'd0), .out(wire_0), .co());
+  TC_Neg # (.UUID(64'd1276159365676943333 ^ UUID), .BIT_WIDTH(64'd8)) Neg8_10 (.in(wire_3), .out(wire_10));
+  TC_And # (.UUID(64'd3577099372888330015 ^ UUID), .BIT_WIDTH(64'd8)) And8_11 (.in0(wire_2), .in1(8'd0), .out(wire_4));
+  TC_Or # (.UUID(64'd3897810589209460718 ^ UUID), .BIT_WIDTH(64'd8)) Or8_12 (.in0(wire_2), .in1(wire_3), .out(wire_18));
+  TC_Not # (.UUID(64'd3231891797059854214 ^ UUID), .BIT_WIDTH(64'd8)) Not8_13 (.in(wire_2), .out(wire_16));
+  TC_Xor # (.UUID(64'd368406480092317364 ^ UUID), .BIT_WIDTH(64'd8)) Xor8_14 (.in0(wire_2), .in1(wire_3), .out(wire_11));
+
+  wire [7:0] wire_0;
+  wire [7:0] wire_1;
+  wire [7:0] wire_1_0;
+  wire [7:0] wire_1_1;
+  wire [7:0] wire_1_2;
+  wire [7:0] wire_1_3;
+  wire [7:0] wire_1_4;
+  wire [7:0] wire_1_5;
+  assign wire_1 = wire_1_0|wire_1_1|wire_1_2|wire_1_3|wire_1_4|wire_1_5;
+  assign Output = wire_1;
+  wire [7:0] wire_2;
+  assign wire_2 = Input_1;
+  wire [7:0] wire_3;
+  assign wire_3 = Input_2;
+  wire [7:0] wire_4;
+  wire [0:0] wire_5;
+  wire [0:0] wire_6;
+  wire [0:0] wire_7;
+  wire [0:0] wire_8;
+  wire [0:0] wire_9;
+  wire [7:0] wire_10;
+  wire [7:0] wire_11;
+  wire [0:0] wire_12;
+  wire [7:0] wire_13;
+  wire [0:0] wire_14;
+  wire [0:0] wire_15;
+  wire [7:0] wire_16;
+  wire [0:0] wire_17;
+  wire [7:0] wire_18;
+  wire [7:0] wire_19;
+  assign wire_19 = Instruction;
+
+endmodule
