@@ -14,6 +14,9 @@ Turing Complete is able to export to Verilog, it is very unoptimized, but still 
 Schematic rendered from the Verilog
 ![An image of the CPU](./taadda.svg)
 
+Simple Diagram
+![A diagram of the CPU](./diagram.png)
+
 ## Notes
 
 The architecture is 32-bit. The assembly is pretty straight-forward, it's fixed-size with four bytes of instruction. The CPU is loosely ARM based, and is classified as Harvard architecture. The CPU contains an ALU, conditional unit, program memory, RAM, stack, program counter, input, output, and registers.
@@ -170,10 +173,11 @@ Computes to the 12th Fibonacci number.
 0
 1
 1
-; sets reg0 to 10, will compute to the 10+2 number
-192 ; add (0) + imm1 (64) + imm2 (128)
-0
-10
+; takes input, will compute to input number of sequence, saves to reg3
+; subtracting 1 because starting with 0 and 1
+129 ; sub (1) + imm2 (128)
+7
+2
 3
 ; initial function call
 232 ; function call (232)
@@ -210,10 +214,10 @@ Computes to the 12th Fibonacci number.
 3
 1
 3
-; if counter is zero, jump to base condition
+; if counter is one, jump to base condition
 160 ; cond (32) + if equal (0) + imm2 (128)
 3
-0
+1
 44  ; address of base case (conditional jump over function call)
 ; if counter isn't zero, recure further
 232 ; function call (232)
