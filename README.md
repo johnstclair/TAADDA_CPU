@@ -164,7 +164,7 @@ This program takes in 32 values from input then stores the values in RAM. Values
 ```
 
 Function example:  
-Computes to the 12th Fibonacci number.
+Computes to the inputted value Fibonacci number.
 
 ```asm
 ; default value in registers is 0, so no need to set reg0 to 0
